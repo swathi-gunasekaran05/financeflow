@@ -1,0 +1,354 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Summary Grid */
+.summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.summary-card.balance {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.extra-stat {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.extra-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: #a8b5c2;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.extra-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.summary-card.balance::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    background: var(--accent-gradient);
+    border-radius: 50%;
+    opacity: 0.08;
+    filter: blur(30px);
+}
+
+.summary-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.summary-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+}
+
+.summary-icon.income-icon {
+    background: rgba(63, 185, 80, 0.12);
+    color: var(--success-color);
+}
+
+.summary-icon.expense-icon {
+    background: rgba(248, 81, 73, 0.12);
+    color: var(--danger-color);
+}
+
+.summary-icon.split-icon {
+    background: rgba(210, 153, 34, 0.12);
+    color: var(--warning-color);
+}
+
+.summary-icon.final-icon {
+    background: rgba(88, 166, 255, 0.12);
+    color: var(--accent-color);
+}
+
+.summary-label {
+    font-size: 0.8rem;
+    color: #c0cad4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+.summary-value {
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.summary-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.positive {
+    color: var(--success-color);
+}
+
+.negative {
+    color: var(--danger-color);
+}
+
+.summary-value.orange {
+    color: var(--warning-color);
+}
+
+.summary-card.full-row {
+    grid-column: 1 / -1;
+}
+
+.summary-value.small-val {
+    font-size: 1.4rem;
+}
+
+.summary-value.mini-val {
+    font-size: 1.1rem;
+}
+
+.split-math {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #a8b5c2;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 6px 12px;
+    border-radius: 8px;
+}
+
+.math-op {
+    opacity: 0.5;
+    font-weight: 400;
+}
+
+.mini-card {
+    padding: 12px 16px;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--accent-gradient);
+    border-radius: 10px;
+    transition: width 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.progress-label {
+    font-size: 0.75rem;
+    color: #a8b5c2;
+}
+
+/* Recent Section */
+.recent-section {
+    padding: 24px;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.badge {
+    font-size: 0.72rem;
+    background: rgba(88, 166, 255, 0.12);
+    color: var(--accent-color);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+/* Empty State */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 48px 0;
+    color: #a8b5c2;
+}
+
+.empty-state p {
+    font-size: 0.9rem;
+}
+
+/* Transaction List */
+.transaction-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px;
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+.transaction-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.tx-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tx-income {
+    background: rgba(63, 185, 80, 0.12);
+    color: var(--success-color);
+}
+
+.tx-expense {
+    background: rgba(248, 81, 73, 0.12);
+    color: var(--danger-color);
+}
+
+.tx-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.tx-desc {
+    font-size: 0.92rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tx-meta {
+    font-size: 0.75rem;
+    color: #a8b5c2;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.tx-badge {
+    background: rgba(210, 153, 34, 0.15);
+    color: var(--warning-color);
+    padding: 1px 8px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+.tx-badge--friend {
+    background: rgba(248, 81, 73, 0.1) !important;
+    color: var(--danger-color) !important;
+}
+
+.tx-total-hint {
+    font-size: 0.65rem;
+    color: #a8b5c2;
+    margin-top: -2px;
+}
+
+.tx-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.tx-amount {
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.delete-btn {
+    color: var(--text-secondary);
+    opacity: 0;
+    transition: var(--transition);
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.transaction-item:hover .delete-btn {
+    opacity: 1;
+}
+
+.delete-btn:hover {
+    color: var(--danger-color);
+    background: rgba(248, 81, 73, 0.1);
+}
+
+@media (max-width: 480px) {
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card.balance {
+        grid-column: 1;
+    }
+
+    .summary-value {
+        font-size: 1.5rem;
+    }
+}
